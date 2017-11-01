@@ -7,7 +7,7 @@ class PagesController < ApplicationController
 
   def index
     # @pages = Page.where(:subject_id => @subject.id).sorted
-    @pages = @subject.pages.sorted
+    @pages = @subject.pages.positioned
   end
 
   def show

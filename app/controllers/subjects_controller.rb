@@ -5,7 +5,7 @@ class SubjectsController < ApplicationController
   before_action :confirm_logged_in
 
   def index
-    @subjects = Subject.sorted
+    @subjects = Subject.positioned
   end
 
   def show

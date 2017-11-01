@@ -14,11 +14,12 @@ class Subject < ActiveRecord::Base
     # validates_presence_of vs. validates_length_of :minimum => 1
     # different error messages: "can't be blank" or "is too short"
     # validates_length_of allows strings with only spaces!
+  scope :visible, -> { where(visible:1) }
+  scope :invisible, -> { where(visible:0) }
+  scope :sorted, -> { order('subjects.name ASC')}
+  scope :positioned, -> { order('subjects.position ASC')}
+  scope :newest_first, -> {order('subjects.created_at ASC')}
 
-  scope :visible, lambda { where(:visible => true) }
-  scope :invisible, lambda { where(:visible => false) }
-  scope :sorted, lambda { order("subjects.position ASC") }
-  scope :newest_first, lambda { order("subjects.created_at DESC")}
   scope :search, lambda {|query|
     where(["name LIKE ?", "%#{query}%"])
   }

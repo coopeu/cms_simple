@@ -10,7 +10,7 @@
     </div>
     <div id="main">
       <div id="navigation">
-        <%= render(:partial => 'layouts/navigation', :locals => {:subjects => @subjects}) %>
+        <%= render(:partial => 'layouts/navigation', :locals => {:subjects => Subject.all.positioned.visible}) %>
       </div>
       <div id="content">
         <%= yield %>
@@ -18,7 +18,7 @@
       <div class="clear"></div>
     </div>
     <div id="footer">
-      <p id="copyright">&copy; lynda.com / Kevin Skoglund</p>
+      <p id="copyright">&copy; MUFICATA RTDL SL / Ferran Cabrer i Vilagut / 12 Jaume Fabra 08004 Barcelona (CATALONIA)</p>
     </div>
   </body>
 </html>

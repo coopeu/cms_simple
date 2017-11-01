@@ -1,0 +1,9 @@
+<!-- Alerts & messages -->
+  <% flash.each do |key, value| %>
+    <%= content_tag :div, value, class: "alert alert-#{key}" %>
+  <% end %>
+
+<% if notice %><p class="notice"><%= notice %></p><% end %>
+<% if alert %><p class="alert"><%= alert %></p><% end %>
+
+<!-- container Alerts & messages/> -->

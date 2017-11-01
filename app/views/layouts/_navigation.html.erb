@@ -1,10 +1,12 @@
+
 <% subjects ||= [] %>
+<% # subjects.order('subject.position ASC') %>
 <ul>
 <% subjects.each do |subject| %>
   <li>
     <%= subject.name %>
     <ul>
-    <% subject.pages.visible.sorted.each do |page| %>
+    <% subject.pages.visible.each do |page| %>
       <li><%= link_to_unless_current(page.name, {:action => 'show', :permalink => page.permalink}) %></li>
     <% end %>
     </ul>

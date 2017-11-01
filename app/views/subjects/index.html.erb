@@ -3,7 +3,7 @@
 <%= link_to("<< Back to Menu", {:controller => 'access', :action => 'index'}, :class => 'back-link') %>
 
 <div class="subjects index">
-  <h2>Subjects</h2>
+  <h2>Temes</h2>
 
   <%= link_to(image_tag('plus_sign.png', :size => '11x11', :alt => '+') + " Add New Subject", {:action => 'new'}, :class => 'action new') %>
 
@@ -23,10 +23,10 @@
       <td class="center"><%= status_tag(subject.visible) %></td>
       <td class="center"><%= subject.pages.size %></td>
       <td class="actions">
-        <%= link_to("View Pages", {:controller => 'pages', :subject_id => subject.id}, :class => 'action show') %>
-        <%= link_to("Show", {:action => 'show', :id => subject.id}, :class => 'action show') %>
-        <%= link_to("Edit", {:action => 'edit', :id => subject.id}, :class => 'action edit') %>
-        <%= link_to("Delete", {:action => 'delete', :id => subject.id}, :class => 'action delete') %>
+        <%= link_to("Mira Pàgines", {:controller => 'pages', :subject_id => subject.id}, :class => 'action show') %>
+        <%= link_to("Mostra", {:action => 'show', :id => subject.id}, :class => 'action show') %>
+        <%= link_to("Edita", {:action => 'edit', :id => subject.id}, :class => 'action edit') %>
+        <%= link_to("Esborra", {:action => 'delete', :id => subject.id}, :class => 'action delete') %>
       </td>
     </tr>
     <% end %>

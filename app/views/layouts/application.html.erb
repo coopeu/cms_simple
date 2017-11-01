@@ -3,9 +3,10 @@
   <head>
     <title>Simple CMS</title>
     <%= javascript_include_tag('public') %>
+    <link href="images/4favicon.ico" rel="shortcut icon" type="image/x-icon" />
   </head>
   <body>
-
+    <%= render(:partial => 'layouts/alerts') %>
     <!-- before yield -->
     <%= yield %>
     <!-- after yield -->

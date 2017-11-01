@@ -7,19 +7,17 @@
   <body>
     <div id="header">
       <h1>Simple CMS Admin</h1>
-    </div>
+    </div><!-- ./header -->
+
     <div id="main">
-      <% if !flash[:notice].blank? %>
-        <div class="notice">
-          <%= flash[:notice] %>
-        </div>
-      <% end %>
+      <%= render(:partial => 'layouts/alerts') %>
       <div id="content">
         <%= yield %>
-      </div>
-    </div>
+      </div><!-- ./content -->
+    </div><!-- ./main -->
+
     <div id="footer">
-      <p id="copyright">&copy; lynda.com / Kevin Skoglund</p>
-    </div>
+      <p id="copyright">© MUFICATA RTDL SL / Ferran Cabrer i Vilagut / 12 Jaume Fabra 08004 Barcelona (CATALONIA)</p>
+    </div><!-- ./footer -->
   </body>
 </html>
