@@ -7,7 +7,7 @@
 
   <%= link_to('Add New Admin User', {:action => 'new'}, :class => 'action new') %>
 
-  <div><%= pluralize(@admin_users.size, 'admin user') %> found</div>
+  <div><%= pluralize(@admin_users.size, 'administrator') %> found</div>
 
   <table class="listing" summary="Admin users list">
     <tr>
@@ -16,14 +16,14 @@
       <th>Email</th>
       <th>Actions</th>
     </tr>
-    <% @admin_users.each do |admin_user| %>
+    <% @admin_users.order('LOWER(username)').each do |au| %>
     <tr class="<%= cycle('odd', 'even') %>">
-      <td><%= admin_user.username %></td>
-      <td><%= admin_user.name %></td>
-      <td><%= mail_to(admin_user.email) %></td>
+      <td><%= au.username %></td>
+      <td><%= au.name %></td>
+      <td><%= mail_to(au.email) %></td>
       <td class="actions">
-        <%= link_to('Edit', {:action => 'edit', :id => admin_user.id}, :class => 'action edit') %>
-        <%= link_to('Delete', {:action => 'delete', :id => admin_user.id}, :class => 'action delete') %>
+        <%= link_to('Edit', {:action => 'edit', :id => au.id}, :class => 'action edit') %>
+        <%= link_to('Delete', {:action => 'delete', :id => au.id}, :class => 'action delete') %>
       </td>
     </tr>
     <% end %>

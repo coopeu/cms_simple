@@ -1,6 +1,7 @@
 <% @page_title = "Admin Menu" %>
 
 <div class="menu">
+  <p><%= link_to("Homepage", :controller => 'public') %></p>	
   <h2>Admin Menu</h2>
   <div class="identity">Logged in as: <%= session[:username] %></div>
   <ul>

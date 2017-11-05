@@ -16,7 +16,7 @@
       <th>Pages</th>
       <th>Actions</th>
     </tr>
-    <% @subjects.each do |subject| %>
+    <% @subjects.order('LOWER(position)').each do |subject| %>
     <tr class="<%= cycle('odd', 'even') %>">
       <td><%= subject.position %></td>
       <td><%= subject.name %></td>

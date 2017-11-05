@@ -3,10 +3,12 @@
   <head>
     <title>Simple CMS<%= " | #{@page_title}" if @page_title %></title>
     <%= stylesheet_link_tag('application', :media => 'all') %>
+    <%= favicon_link_tag '4favicon.ico' %>
   </head>
   <body>
     <div id="header">
       <h1>Simple CMS</h1>
+      <p style='text-align: right; margin-right: 30px;'><%= link_to("Administration", :controller => 'subjects') %></p>
     </div>
     <div id="main">
       <div id="navigation">

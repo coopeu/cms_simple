@@ -15,7 +15,7 @@ SimpleCms::Application.routes.draw do
   #get "demo/index"
   match ':controller(/:action(/:id))', :via => [:get, :post]
 
-  get 'demo/text_helpers', :to => 'demo#text_helpers'
+  #get 'demo/text_helpers', :to => 'demo#text_helpers'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
