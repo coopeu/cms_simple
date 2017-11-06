@@ -20,7 +20,7 @@ class PublicController < ApplicationController
   private
 
     def setup_navigation
-      @subjects = Subject.visible.sorted
+      @subjects = Subject.visible.order(:position)
     end
 
 end
